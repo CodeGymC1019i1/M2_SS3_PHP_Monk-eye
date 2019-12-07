@@ -1,10 +1,11 @@
 <?php
-define("SLOW",1);
-define("MEDIUM",2);
-define("FAST",3);
+//define("SLOW",1);
+//define("MEDIUM",2);
+//define("FAST",3);
 
 class Fan
 {
+
     private $speed;
     private $on;
     private $radius;
@@ -73,18 +74,21 @@ class Fan
     {
         $this->speed = $speed;
     }
+
     public function __construct()
     {
         $this->color = "blue";
-        $this->speed = SLOW;
+        $this->speed = SpeedConstant::SLOW;
         $this->on = false;
         $this->radius = 5;
     }
-    public function toString(){
-        if($this->on)
-            return "fan is on, Speed: ".$this->speed.", color: ".$this->color.", radius: ".$this->radius;
+
+    public function toString()
+    {
+        if ($this->on)
+            return "fan is on, Speed: " . $this->speed . ", color: " . $this->color . ", radius: " . $this->radius;
         else
-            return "fan is off, color: ".$this->color.", radius: ".$this->radius;
+            return "fan is off, color: " . $this->color . ", radius: " . $this->radius;
     }
 
 }
